@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ReactiveComponent} from './reactive-component';
 
 @Component({
@@ -9,6 +9,7 @@ import {ReactiveComponent} from './reactive-component';
 export class FrameworkPollComponent extends ReactiveComponent implements OnInit {
 
   @Input() title: string;
+  @Output() onVote:EventEmitter<any> = new EventEmitter();
 
   angularVoteCount = 0;
   reactVoteCount = 0;
@@ -35,7 +36,7 @@ export class FrameworkPollComponent extends ReactiveComponent implements OnInit 
     } else {
       this.vueVoteCount++;
     }
-
+    this.onVote.emit({'framework': framework});
   }
 
   get angularVotePercent() {
