@@ -15,6 +15,6 @@ const concat = require('concat');
 
   await fs.copyFile('./dist/angularElements/styles.css', 'elements/styles.css')
 
-  //await fs.copy('./dist/angularElements/assets/', 'elements/assets/' )
+  await fs.copy('./dist/angularElements/assets/', 'elements/assets/' )
 
 })()

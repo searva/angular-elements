@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms';
   entryComponents: [
     FrameworkPollComponent
   ]
+  //,  bootstrap: [FrameworkPollComponent] //Solo descomentar cuando se haga ng serve
 })
 export class AppModule {
   constructor(private injector: Injector) {}
